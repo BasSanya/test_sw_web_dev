@@ -10,11 +10,11 @@ class LocatorsLoginPage():
 class LocatorsMainPage():
     # XPATH Selectors for all elements
     MP_USERS = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[1]/div[2]/span"
-    MP_OTHER_CATALOG = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[2]/div[2]/span"
-    MP_SALES_STUCTURES = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[3]/div[2]/span"
+    MP_OTHER_CATALOGS = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[2]/div[2]/span"
+    MP_SALES_STUCTURE = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[3]/div[2]/span"
     MP_OUTLETS = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[4]/div[2]/span"
     MP_PRODUCTS = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[5]/div[2]/span"
     MP_DOCUMENTS = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[6]/div[2]/span"
-    MP_PLAN_AND_ANALIS = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[7]/div[2]/span"
+    MP_PLAN_AND_ANALYSE = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[7]/div[2]/span"
     MP_REPORTS = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[8]/div[2]/span"
-    MP_DATA_TRANSFER = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[9]/div[2]/span"
+    MP_DATA_EXCHANGE = "/html/body/form/div[6]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div[3]/div[1]/div/ul/li[9]/div[2]/span"

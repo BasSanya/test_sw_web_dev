@@ -7,6 +7,9 @@ class TestMainPage(MainPage):
     login = 'bbuhe'
     password = '%YvdvIjV28'
 
+    @allure.title("Test Main Page")
     def test_side_menu_blocks(self):
+
         self.login_page(self.url, self.login, self.password)
+
         self.check_all_catalogs_are_present()
