@@ -13,3 +13,8 @@ class TestMainPage(MainPage):
         self.login_page(self.url, self.login, self.password)
 
         self.check_all_catalogs_are_present()
+
+        self.open_help_menu()
+
+        #Перевірити відкриття кожного довідника
+        #Перевірка генерації звітів

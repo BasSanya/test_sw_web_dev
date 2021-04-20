@@ -66,3 +66,6 @@ class MainPage(LoginPage):
             data_exchange_element = self.get_text(LocatorsMainPage.MP_DATA_EXCHANGE, by=By.XPATH)
             assert data_exchange_element == 'Обмен данными', 'The actual name of catalog is ' + data_exchange_element +\
                 ' and IT does not match the expected. Element should have name: "Обмен данными"'
+
+    def open_help_menu(self):
+        pass #описати натичкання на знак питання та відкриття меню, + перевірити ссилку
