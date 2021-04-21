@@ -68,4 +68,4 @@ class MainPage(LoginPage):
                 ' and IT does not match the expected. Element should have name: "Обмен данными"'
 
     def open_help_menu(self):
-        pass #описати натичкання на знак питання та відкриття меню, + перевірити ссилку
+        pass #описати натичкання на знак питання та відкриття меню, + перевірити силку
