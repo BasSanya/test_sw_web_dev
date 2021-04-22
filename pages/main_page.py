@@ -1,3 +1,5 @@
+from selenium.webdriver.common.keys import Keys
+
 from locators import LocatorsMainPage
 from .login_page import LoginPage
 from selenium.webdriver.common.by import By
@@ -11,7 +13,7 @@ class MainPage(LoginPage):
 
     def check_1L_catalogs_are_present(self):
         with allure.step(MainPageAllure.USERS_DIR):
-            self.is_element_present(LocatorsMainPage.MP_USERS, by=By.XPATH)
+            self.wait_for_element(LocatorsMainPage.MP_USERS, by=By.XPATH, timeout=15)
             user_element = self.get_text(LocatorsMainPage.MP_USERS, by=By.XPATH)
             assert user_element == 'Пользователи', 'The actual name of catalog is ' + user_element \
                 + ' and IT does not match the expected. Element should have name: "Пользователи"'
@@ -56,12 +58,14 @@ class MainPage(LoginPage):
                 ' and IT does not match the expected. Element should have name: "План/Анализ"'
 
         with allure.step(MainPageAllure.REPORTS_DIR):
+            self.execute_script("document.getElementById('" + LocatorsMainPage.MP_REPORTS_ID + "').scrollIntoView()")
             self.is_element_present(LocatorsMainPage.MP_REPORTS, by="By.XPATH")
             reports_element = self.get_text(LocatorsMainPage.MP_REPORTS, by=By.XPATH)
             assert reports_element == 'Отчеты', 'The actual name of catalog is ' + reports_element + \
                 ' and IT does not match the expected. Element should have name: "Отчеты"'
 
         with allure.step(MainPageAllure.DATA_EXCHANGE_DIR):
+            self.scroll_to(LocatorsMainPage.MP_DATA_EXCHANGE, by="By.XPATH")
             self.is_element_present(LocatorsMainPage.MP_DATA_EXCHANGE, by="By.XPATH")
             data_exchange_element = self.get_text(LocatorsMainPage.MP_DATA_EXCHANGE, by=By.XPATH)
             assert data_exchange_element == 'Обмен данными', 'The actual name of catalog is ' + data_exchange_element +\

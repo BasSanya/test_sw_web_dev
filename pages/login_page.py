@@ -25,11 +25,11 @@ class LoginPage(BaseCase):
                 self.send_keys(LocatorsLoginPage.PASS_FIELD, password, x)
             with allure.step(LoginPageAllure.CLICK_BUTTON):
                 self.click(LocatorsLoginPage.LOGIN_BUTTON)
+            # with
             try:
                 self.wait_for_element_present('//td[@class="ErrorLabel"]', x, timeout=10)
             except NoSuchElementException:
-                if i == 3:
-                    self.wait_for_element_present(LocatorsLoginPage.LOGIN_ON_LOGED_PAGE, x, timeout=15)
-                    with allure.step(LoginPageAllure.LOGIN_IS_SUCCESS):
-                        self.assert_text(login, LocatorsLoginPage.LOGIN_ON_LOGED_PAGE, x, timeout=7)
+                self.wait_for_element_present(LocatorsLoginPage.LOGIN_ON_LOGGED_PAGE, x, timeout=15)
+                with allure.step(LoginPageAllure.LOGIN_IS_SUCCESS):
+                    self.assert_text(login, LocatorsLoginPage.LOGIN_ON_LOGGED_PAGE, x, timeout=7)
                 return
