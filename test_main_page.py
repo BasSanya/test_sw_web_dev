@@ -4,9 +4,9 @@ import allure
 
 
 class TestMainPage(MainPage):
-    url = 'https://appunilevertest.datacenter.ssbs.com.ua/SalesWorksWeb/Login.aspx?ReturnUrl=%2fSalesWorksWeb%2fdefault.aspx',
-    login = 'bbuhe',
-    password = '%YvdvIjV28'
+    url = 'https://appunilevertest.datacenter.ssbs.com.ua/SalesWorksWeb/Login.aspx?ReturnUrl=%2fSalesWorksWeb%2fdefault.aspx'
+    login = 'olekb01'
+    password = '%x8&Eh5-F8_SrPa5'
 
 
     @allure.title("Test Main Page")
