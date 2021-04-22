@@ -9,7 +9,7 @@ class MainPage(LoginPage):
     def __init__(self, *args, **kwargs):
         super(MainPage, self).__init__(*args, **kwargs)
 
-    def check_all_catalogs_are_present(self):
+    def check_1L_catalogs_are_present(self):
         with allure.step(MainPageAllure.USERS_DIR):
             self.is_element_present(LocatorsMainPage.MP_USERS, by=By.XPATH)
             user_element = self.get_text(LocatorsMainPage.MP_USERS, by=By.XPATH)

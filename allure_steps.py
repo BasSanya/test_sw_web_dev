@@ -1,11 +1,11 @@
 class LoginPageAllure():
     OPEN_URL = "Open Login page"
-    SEARCH_LOGIN_FIELD = "Search login field"
+    SEARCH_LOGIN_FIELD = "Wait elements load. Search login field"
     ENTER_LOGIN = "Enter login"
-    SEARCH_PASS_FIELD = "Search password field"
     ENTER_PASS = "Enter password"
-    SEARCH_BUTTON = "Search Login button for submit"
     CLICK_BUTTON = "Click on Login button"
+    LOGIN_IS_SUCCESS = "Login is success"
+    ERROR_LOGIN_TEXT = ""
 
 class MainPageAllure():
     USERS_DIR = "Directory 'Users' is on page and named 'Пользователи'"
