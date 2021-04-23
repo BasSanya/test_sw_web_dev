@@ -1,5 +1,3 @@
-from selenium.webdriver.common.keys import Keys
-
 from locators import LocatorsMainPage
 from .login_page import LoginPage
 from selenium.webdriver.common.by import By
@@ -72,4 +70,13 @@ class MainPage(LoginPage):
                 ' and IT does not match the expected. Element should have name: "Обмен данными"'
 
     def open_help_menu(self):
-        self.find_element('//*[@id="Vertical_CallbackPanel_SAC_Menu_DXI1_T"]', by=By.XPATH)
+        with allure.step(MainPageAllure.FIND_HELP_BUTTON):
+            self.find_element(LocatorsMainPage.MP_HELP_BUTTON, by=By.XPATH)
+        with allure.step(MainPageAllure.CLICK_HELP_BUTTON):
+            self.click(LocatorsMainPage.MP_HELP_BUTTON, by=By.XPATH)
+        with allure.step(MainPageAllure.CHECK_HELP_MENU):
+            assert self.assert_text('Добро пожаловать', LocatorsMainPage.MP_HELP_MESSAGE, by=By.XPATH), \
+                'Help menu not open after click on help button'
+        with allure.step(MainPageAllure.CHECK_HELP_LINK):
+            assert self.get_attribute(LocatorsMainPage.MP_HELP_LINK, 'href', by=By.XPATH) ==\
+                'http://helpsw.datacenter.ssbs.com.ua/SWEDocs/SWE/', 'Link for documentation not found or incorrect'

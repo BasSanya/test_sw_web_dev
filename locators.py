@@ -5,8 +5,7 @@ class LocatorsLoginPage():
     PASS_FIELD = '/html/body/div[1]/form/div[4]/table[1]/tbody/tr/td/div/div/div[2]/table/tbody/tr[1]/td/div/div/div/div[3]/table/tbody/tr/td/table/tbody/tr/td[2]/input'
     LOGIN_BUTTON = '/html/body/div[1]/form/div[4]/table[1]/tbody/tr/td/div/div/div[2]/table/tbody/tr[3]/td/div/div/div/ul/li/a'
     LOGIN_ON_LOGGED_PAGE = '//*[@id="Vertical_CallbackPanel_SAC_Menu_DXI2_T"]/span'
-    ERROR_LOGIN_TEXT = '/html/body/div/form/div[4]/table[1]/tbody/tr/td/div/div/div[2]/table/tbody/tr[1]/td/div/div/div/table/tbody/tr[1]/td[2]/div[1]/span'
-    ERROR_LOGIN_SUPPORT = '/html/body/div/form/div[4]/table[1]/tbody/tr/td/div/div/div[2]/table/tbody/tr[1]/td/div/div/div/table/tbody/tr[1]/td[2]/div[3]/a'
+    ERROR_ENTERED_MESSAGE = '//td[@class="ErrorLabel"]'
 
 class LocatorsMainPage():
     # XPATH Selectors for all elements
@@ -20,3 +19,6 @@ class LocatorsMainPage():
     MP_REPORTS = '//*[@id="Vertical_NC_NB_GHC7"]/span'
     MP_REPORTS_ID = 'Vertical_NC_NB_GHC7'
     MP_DATA_EXCHANGE = '//*[@id="Vertical_NC_NB_GHC8"]/span'
+    MP_HELP_BUTTON = '//*[@id="Vertical_CallbackPanel_SAC_Menu_DXI1_T"]'
+    MP_HELP_MESSAGE = '//*[@id="UserGuideMessage"]/span/p'
+    MP_HELP_LINK = '//*[@id="UserGuideMessage"]/span/a'

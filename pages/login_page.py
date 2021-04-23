@@ -26,7 +26,7 @@ class LoginPage(BaseCase):
                 self.click(LocatorsLoginPage.LOGIN_BUTTON)
             # with
             try:
-                self.wait_for_element_present('//td[@class="ErrorLabel"]', by=By.XPATH, timeout=10)
+                self.wait_for_element_present(LocatorsLoginPage.ERROR_ENTERED_MESSAGE, by=By.XPATH, timeout=10)
             except NoSuchElementException:
                 self.wait_for_element_present(LocatorsLoginPage.LOGIN_ON_LOGGED_PAGE, by=By.XPATH, timeout=15)
                 with allure.step(LoginPageAllure.LOGIN_IS_SUCCESS):
