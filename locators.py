@@ -10,13 +10,13 @@ class LocatorsLoginPage():
 
 class LocatorsMainPage():
     # XPATH Selectors for all elements
-    MP_USERS = '//*[@id="Vertical_NC_NB_GHC0"]'
+    MP_USERS = '//*[@id="Vertical_NC_NB_GHC0"]/span'
     MP_OTHER_CATALOGS = '//*[@id="Vertical_NC_NB_GHC1"]/span'
     MP_SALES_STUCTURE = '//*[@id="Vertical_NC_NB_GHC2"]/span'
     MP_OUTLETS = '//*[@id="Vertical_NC_NB_GHC3"]/span'
-    MP_PRODUCTS = '//*[@id="Vertical_NC_NB_GHC4"]'
-    MP_DOCUMENTS = '//*[@id="Vertical_NC_NB_GHC6"]/span'
-    MP_PLAN_AND_ANALYSE = '//*[@id="Vertical_NC_NB_GHC7"]/span'
-    MP_REPORTS = '//*[@id="Vertical_NC_NB_GHC15"]/span'
-    MP_REPORTS_ID = 'Vertical_NC_NB_GHC15'
-    MP_DATA_EXCHANGE = '//*[@id="Vertical_NC_NB_GHC17"]/span'
+    MP_PRODUCTS = '//*[@id="Vertical_NC_NB_GHC4"]/span'
+    MP_DOCUMENTS = '//*[@id="Vertical_NC_NB_GHC5"]/span'
+    MP_PLAN_AND_ANALYSE = '//*[@id="Vertical_NC_NB_GHC6"]/span'
+    MP_REPORTS = '//*[@id="Vertical_NC_NB_GHC7"]/span'
+    MP_REPORTS_ID = 'Vertical_NC_NB_GHC7'
+    MP_DATA_EXCHANGE = '//*[@id="Vertical_NC_NB_GHC8"]/span'
