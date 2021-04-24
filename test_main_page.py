@@ -6,7 +6,7 @@ import allure
 @allure.story("Test Main Page")
 class TestMainPage(MainPage):
     login_parametrs = [{
-        'url': 'https://appunilever.datacenter.ssbs.com.ua/SalesWorksWeb/Login.aspx?ReturnUrl=%2fSalesWorksWeb%2fdefault.aspx',
+        'url': 'https://appunileverdev.datacenter.ssbs.com.ua/SalesWorksWeb/Login.aspx?ReturnUrl=%2fSalesWorksWeb%2fdefault.aspx',
         'login': 'bbuhe',
         'password': '%YvdvIjV28'}
     ]
