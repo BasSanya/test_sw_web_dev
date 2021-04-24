@@ -71,12 +71,75 @@ class MainPage(LoginPage):
 
     def open_help_menu(self):
         with allure.step(MainPageAllure.FIND_HELP_BUTTON):
-            self.find_element(LocatorsMainPage.MP_HELP_BUTTON, by=By.XPATH)
+            self.find_element(LocatorsMainPage.HP_BUTTON, by=By.XPATH)
         with allure.step(MainPageAllure.CLICK_HELP_BUTTON):
-            self.click(LocatorsMainPage.MP_HELP_BUTTON, by=By.XPATH)
+            self.click(LocatorsMainPage.HP_BUTTON, by=By.XPATH)
         with allure.step(MainPageAllure.CHECK_HELP_MENU):
-            assert self.assert_text('Добро пожаловать', LocatorsMainPage.MP_HELP_MESSAGE, by=By.XPATH), \
+            assert self.assert_text('Добро пожаловать', LocatorsMainPage.HP_MESSAGE, by=By.XPATH), \
                 'Help menu not open after click on help button'
         with allure.step(MainPageAllure.CHECK_HELP_LINK):
-            assert self.get_attribute(LocatorsMainPage.MP_HELP_LINK, 'href', by=By.XPATH) ==\
+            assert self.get_attribute(LocatorsMainPage.HP_LINK, 'href', by=By.XPATH) ==\
                 'http://helpsw.datacenter.ssbs.com.ua/SWEDocs/SWE/', 'Link for documentation not found or incorrect'
+
+    def open_users_dir(self):
+        with allure.step(MainPageAllure.SEARCH_DROP_MENU_USERS):
+            self.find_element(LocatorsMainPage.US_DROP_MENU_USERS, by=By.XPATH)
+        with allure.step(MainPageAllure.OPEN_DROP_MENU_USERS):
+            self.click(LocatorsMainPage.US_DROP_MENU_USERS, by=By.XPATH)
+        with allure.step(MainPageAllure.WAIT_DROP_MENU_USERS):
+            self.wait_for_element_visible(LocatorsMainPage.US_DROP_MENU_SUB_USERS, by=By.XPATH)
+        with allure.step(MainPageAllure.OPEN_DROP_MENU_OF_SUB_CATALOG_USERS):
+            self.click(LocatorsMainPage.US_DROP_MENU_SUB_USERS, by=By.XPATH)
+
+        with allure.step(MainPageAllure.USERS_SUB_DIR_OF_USERS):
+            users_subdir = self.get_text(LocatorsMainPage.US_USERS_SUBDIR, by=By.XPATH)
+            assert self.assert_text('Пользователи', LocatorsMainPage.US_USERS_SUBDIR, by=By.XPATH), \
+                'Sub catalogs "Users" is not present of have incorrect name: ' + users_subdir
+
+        with allure.step(MainPageAllure.TYPES_SUB_DIR_OF_USERS):
+            users_type_dir = self.get_text(LocatorsMainPage.US_USERS_TYPE, by=By.XPATH)
+            assert self.assert_text('Типы', LocatorsMainPage.US_USERS_TYPE, by=By.XPATH), \
+                'Sub catalogs "Types" is not present of have incorrect name: ' + users_type_dir
+
+        with allure.step(MainPageAllure.MM_USERS_SUB_DIR_OF_USERS):
+            mm_users_dir = self.get_text(LocatorsMainPage.US_MM_USERS, by=By.XPATH)
+            assert self.assert_text('Пользователи ММ', LocatorsMainPage.US_MM_USERS, by=By.XPATH), \
+                'Sub catalogs "Mobile Modules Users" is not present of have incorrect name: ' + mm_users_dir
+
+        with allure.step(MainPageAllure.MM_USERS_PROFILES_SUB_DIR_OF_USERS):
+            mm_users_profile_dir = self.get_text(LocatorsMainPage.US_MM_USERS_PROFILES, by=By.XPATH)
+            assert self.assert_text('Профили пользователей ММ', LocatorsMainPage.US_MM_USERS_PROFILES, by=By.XPATH), \
+                'Sub catalogs "Mobile modules users profiles" is not present of have incorrect name: ' \
+                + mm_users_profile_dir
+
+        with allure.step(MainPageAllure.ABOUT_USER_SUB_DIR_OF_USERS):
+            about_users_dir = self.get_text(LocatorsMainPage.US_ABOUT_USER, by=By.XPATH)
+            assert self.assert_text('О пользователе', LocatorsMainPage.US_ABOUT_USER, by=By.XPATH), \
+                'Sub catalogs "About user" is not present of have incorrect name: ' + about_users_dir
+
+        with allure.step(MainPageAllure.LOGIN_TYPES_SUB_DIR_OF_USERS):
+            login_types_dir = self.get_text(LocatorsMainPage.US_LOGIN_TYPES, by=By.XPATH)
+            assert self.assert_text('Типы логинов', LocatorsMainPage.US_LOGIN_TYPES, by=By.XPATH), \
+                'Sub catalogs "Login types" is not present of have incorrect name: ' + login_types_dir
+
+        with allure.step(MainPageAllure.CLOSE_DROP_MENU_OF_SUB_USERS):
+            self.click(LocatorsMainPage.US_CLOSE_SUB_MENU, by=By.XPATH)
+        with allure.step(MainPageAllure.CLOSE_DROP_MENU_OF_USERS):
+            self.click(LocatorsMainPage.US_CLOSE_MENU, by=By.XPATH)
+            self.wait_for_element_not_visible(LocatorsMainPage.US_USERS_SUBDIR, by=By.XPATH)
+
+    def open_other_dir(self):
+        with allure.step(MainPageAllure.OPEN_DROP_MENU_OF_OTHER_CATALOGS):
+            self.is_element_present(LocatorsMainPage.OT_OPEN_DROP_MENU_BTN, by=By.XPATH)
+            self.click(LocatorsMainPage.OT_OPEN_DROP_MENU_BTN, by=By.XPATH)
+
+        with allure.step(MainPageAllure.RESULT_OF_MM_SYNCHRON):
+            synchronization_results = self.get_text('//*[@id="Vertical_NC_NB_I1i0_T"]/span', by=By.XPATH)
+            assert self.assert_text('Результаты синхронизации ОО',
+                                    '//*[@id="Vertical_NC_NB_I1i0_T"]/span', by=By.XPATH), \
+                'Sub catalog "Result of Synchronization OO" is not present of have incorrect name: ' \
+                + synchronization_results
+
+        with allure.step(MainPageAllure.CLOSE_DROP_MENU_OF_OTHER_CATALOGS):
+            self.click(LocatorsMainPage.OT_CLOSE_DROP_MENU_BTN, by=By.XPATH)
+            self.wait_for_element_not_visible('//*[@id="Vertical_NC_NB_I1i0_T"]/span', by=By.XPATH)
