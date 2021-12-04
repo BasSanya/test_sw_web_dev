@@ -11,7 +11,7 @@ class LoginPage(BaseCase):
 
     def login_page(self, url, login, password):
         with allure.step(LoginPageAllure.OPEN_URL):
-            self.driver.get(url)
+            self.open(url)
 
         for i in range(3):
             with allure.step(LoginPageAllure.SEARCH_LOGIN_FIELD):
@@ -31,4 +31,4 @@ class LoginPage(BaseCase):
                 self.wait_for_element_present(LocatorsLoginPage.LOGIN_ON_LOGGED_PAGE, by=By.XPATH, timeout=15)
                 with allure.step(LoginPageAllure.LOGIN_IS_SUCCESS):
                     self.assert_text(login, LocatorsLoginPage.LOGIN_ON_LOGGED_PAGE, by=By.XPATH, timeout=7)
-                return
+                break
